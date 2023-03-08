@@ -1,0 +1,28 @@
+// @ts-check
+const fs = require('fs').promises;
+
+fs.readFile('test.txt', 'utf-8')
+  .then((data) => {
+    console.log('1번', data.toString());
+    return fs.readFile('test.txt', 'utf-8');
+  })
+  .then((data) => {
+    console.log('2번', data.toString());
+    return fs.readFile('test.txt', 'utf-8');
+  })
+  .then((data) => {
+    console.log('3번', data.toString());
+    return fs.readFile('test.txt', 'utf-8');
+  })
+  .then((data) => {
+    console.log('4번', data.toString());
+    return fs.readFile('test.txt', 'utf-8');
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+console.log('1번');
+console.log('2번');
+console.log('3번');
+console.log('4번');
