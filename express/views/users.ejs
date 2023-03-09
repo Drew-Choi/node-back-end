@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script defer src="/js/main.js"></script>
  </head>
  <body>
   <h1>Hello, EJS world!</h1>
@@ -24,11 +26,15 @@
       <p>
         NAEM: <%= USERARR[i].name %>
       </p>
+      <p>
+        E-mai: <%= USERARR[i].email %>
+      </p>
     </li>
     <% } %>
    <% } else { %>
    <li> 회원 정보가 없습니다!</li>
    <% } %>
   </ul>
+  <img src="/images/dog.jpeg" alt="강아지">
  </body>
 </html>
