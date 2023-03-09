@@ -14,6 +14,19 @@ const USER = {
   },
 };
 
+const USERARR = [
+  {
+    id: 'tetz',
+    name: '이효석',
+  },
+  {
+    id: 'pororo',
+    name: '뽀로로',
+  },
+];
+
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
   console.log('Hello world');
 });
@@ -81,6 +94,23 @@ userRouter.delete('/delete/:id', (req, res) => {
   } else {
     res.send('id가 존재하지 않습니다.');
   }
+});
+
+userRouter.get('/show', (req, res) => {
+  res.writeHead(200, { 'content-Type': 'text/html; charset=UTF-8' });
+  res.write('<h1>Hello, Dynamic Web Page</h1>');
+
+  for (let i = 0; i < USERARR.length; i += 1) {
+    res.write(`<h2>USER ID is ${USERARR[i].id}</h2>`);
+    res.write(`<h2>USER ID is ${USERARR[i].name}</h2>`);
+  }
+
+  res.end();
+});
+
+userRouter.get('/ejs', (req, res) => {
+  const userCount = USERARR.length;
+  res.render('index', { USERARR, userCount });
 });
 
 app.listen(PORT, () => {
