@@ -2,6 +2,7 @@
 
 const promise = new Promise((resol, rej) => {
   const tetz = 'older';
+  // @ts-ignore
   if (tetz === 'old') {
     setTimeout(() => {
       resol('tetz is old');
