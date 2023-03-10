@@ -35,6 +35,22 @@
    <li> 회원 정보가 없습니다!</li>
    <% } %>
   </ul>
+
+  <form action="/user/add" method="POST">
+   <div>
+    <label>아이디</label>
+    <input type="text" name="id" />
+   </div>
+   <div>
+    <label>이름</label>
+    <input type="text" name="name" />
+   </div>
+   <div>
+    <label>이메일</label>
+    <input type="email" name="email" />
+   </div>
+   <button type="submit">제출</button>
+  </form>
   <img src="/images/dog.jpeg" alt="강아지">
  </body>
 </html>
