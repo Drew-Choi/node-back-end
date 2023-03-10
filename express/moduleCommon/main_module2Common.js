@@ -1,4 +1,4 @@
-const moduleHuman = require('./human.js');
+const moduleHuman = require('./humanCommon.js');
 
 console.log(moduleHuman.human);
 moduleHuman.showHuman();
