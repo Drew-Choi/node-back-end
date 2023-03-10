@@ -30,7 +30,8 @@ router.post('/addposting', (req, res) => {
       err.statusCode = 400;
       throw err;
     }
-  } else if (req.body) {
+  } //req.body에 값이 없어도 들어와 true로 반환하므로 오브텍트 키로 배열화 시켜서 확인해야함
+  else if (Object.keys(req.body).length >= 1) {
     if (req.body.title && req.body.content) {
       const newPost = {
         title: req.body.title,
